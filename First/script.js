@@ -47,10 +47,17 @@
 // }
 
 // 6
-let a = Number.parseInt(prompt("Enter number 1: "));
-let b = Number.parseInt(prompt("Enter number 2: "));
+// let a = Number.parseInt(prompt("Enter number 1: "));
+// let b = Number.parseInt(prompt("Enter number 2: "));
 
-let x = -b / a
-alert(x);
+// let x = -b / a
+// alert(x);
 
 // 7
+let hours = Number.parseInt(prompt("Enter hours: "));
+let minutes = Number.parseInt(prompt("Enter minutes: "));
+
+let left = 24 - hours;
+let right = 60 - minutes;
+
+alert(`${left} : ${right} left till tomorrow`);

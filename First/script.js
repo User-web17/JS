@@ -61,7 +61,7 @@
 // let passedMinutes = (hours * 60) + minutes;
 // let minutesLeft = TOTAL - passedMinutes;
 
-// // Math.Floor = округлення до цілих
+// // Math.Floor = rounding to integers
 // let leftHours = Math.floor(minutesLeft / 60);
 // let leftMinutes = minutesLeft % 60;
 
@@ -69,7 +69,20 @@
 
 
 // 8
-
+// let num = Number.parseInt(prompt("Enter number:"));
+// let firstTwo = Number.parseInt(num / 10);
+// let second = firstTwo % 10;
+// alert(second);
 
 // 9
-let bigNum = Number.parseInt(prompt("Enter number:"));
+// let bigNum = prompt("Enter number:");
+// // Split, reverse and trim from C#
+// let reverseNum = bigNum.split('').reverse().join('');
+
+// alert(reverseNum);
+
+// 10
+const SALARY = 250;
+let salesPrice = Number.parseInt(prompt("Enter price of sales:")) * 0.1;
+
+alert(SALARY + salesPrice);

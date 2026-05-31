@@ -54,10 +54,22 @@
 // alert(x);
 
 // 7
-let hours = Number.parseInt(prompt("Enter hours: "));
-let minutes = Number.parseInt(prompt("Enter minutes: "));
+// let hours = Number.parseInt(prompt("Enter hours (0-23):"));
+// let minutes = Number.parseInt(prompt("Enter minutes (0-59):"));
 
-let left = 24 - hours;
-let right = 60 - minutes;
+// const TOTAL = 24 * 60;
+// let passedMinutes = (hours * 60) + minutes;
+// let minutesLeft = TOTAL - passedMinutes;
 
-alert(`${left} : ${right} left till tomorrow`);
+// // Math.Floor = округлення до цілих
+// let leftHours = Math.floor(minutesLeft / 60);
+// let leftMinutes = minutesLeft % 60;
+
+// alert(`${leftHours}:${leftMinutes} left till tomorrow`);
+
+
+// 8
+
+
+// 9
+let bigNum = Number.parseInt(prompt("Enter number:"));

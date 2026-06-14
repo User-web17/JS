@@ -27,61 +27,79 @@ buttons.forEach(button => button.showBtn(150, 50, "Text", "blue"));
 
 // 2
 class Figure {
-    #Name;
-    get getName() {
-        console.log(this.#Name);
-    }
-
-    getInfo(sides, marks) {
-        const obj = {};
-
-        for (let i = 0; i < sides.length; i++) {
-            obj[sides[i]] = marks[i];
-        }
-
-        console.log(obj);
-    }
-
     getPerimeter() {
-        console.log("Base class perimeter")
+        console.log("Base class perimeter");
     }
 
     getArea() {
-        console.log("Base class area")
+        console.log("Base class area");
     }
 }
 
-class Square extends Figure{
-    getPerimeter(a) {
-        console.log(`Square perimeter: ${a*4}`)
+class Square extends Figure {
+    constructor(a) {
+        super();
+        this.a = a;
     }
 
-    getArea(a) {
-        console.log(`Square Area: ${Math.pow(a, 2)}`)
-    }
-}
-
-class Rectangle extends Figure{
-    getPerimeter(a, b) {
-        console.log(`Rectangle perimeter: ${(a+b)*2}`)
+    getPerimeter() {
+        console.log(`Square perimeter: ${this.a * 4}`);
     }
 
-    getArea(a,b) {
-        console.log(`Rectangle perimeter: ${a*b}`)
+    getArea() {
+        console.log(`Square area: ${this.a ** 2}`);
     }
 }
 
-class Triangle extends Figure{
-    getPerimeter(a, b, c) {
-        console.log(`Triangle perimeter: ${a+b+c}`)
+class Rectangle extends Figure {
+    constructor(a, b) {
+        super();
+        this.a = a;
+        this.b = b;
     }
 
-    getArea(a, b, c) {
-        const p = (a + b + c) / 2;
+    getPerimeter() {
+        console.log(`Rectangle perimeter: ${(this.a + this.b) * 2}`);
+    }
+
+    getArea() {
+        console.log(`Rectangle area: ${this.a * this.b}`);
+    }
+}
+
+class Triangle extends Figure {
+    constructor(a, b, c) {
+        super(); // base class constructor for this
+        this.a = a;
+        this.b = b;
+        this.c = c;
+    }
+
+    getPerimeter() {
+        console.log(`Triangle perimeter: ${this.a + this.b + this.c}`);
+    }
+
+    getArea() {
+        const p = (this.a + this.b + this.c) / 2;
         console.log(
-            `Triangle area: ${Math.sqrt(p * (p - a) * (p - b) * (p - c))}`
+            `Triangle area: ${Math.sqrt(
+                p * (p - this.a) * (p - this.b) * (p - this.c)
+            )}`
         );
     }
+}
+
+const figures = [
+    new Square(5),
+    new Rectangle(4, 6),
+    new Triangle(3, 4, 5)
+];
+
+for (const figure of figures) {
+    console.log(`=== ${figure.constructor.name} ===`);
+    figure.getPerimeter();
+    figure.getArea();
+    console.log();
 }
 
 // 3

@@ -1,51 +1,126 @@
-class Printer {
-    print(text) {
-        console.log(`Друк: ${text}`);
+// 1
+class Button {
+    showBtn(width, height, text) {
+        document.write(`
+            <button>${text}</button>
+            `);
     }
 }
 
-class SecurePrinter extends Printer {
-    print(text) {
-        super.print('[ЗАШИФРОВАНО]');
-        console.log('[LOG] Зашифрований документ роздруковано');
+class BootstrapButton extends Button {
+    showBtn(width, height, text, color) {
+        document.write(`
+            <button style="
+                width:${width}px;
+                height:${height}px;
+                background-color:${color};
+            ">${text}</button>
+            `);
     }
 }
 
-const myPrinter = new SecurePrinter();
+const buttons = [
+    new Button, new BootstrapButton
+]
 
-myPrinter.print("Тигр це вовк, а вовк це не тигр");
+buttons.forEach(button => button.showBtn(150, 50, "Text", "blue"));
 
-class Animal {
-    constructor(name) {
-        this.name = name;
+// 2
+class Figure {
+    #Name;
+    get getName() {
+        console.log(this.#Name);
     }
 
-    eat() {
-        console.log(`${this.name} їсть`);
+    getInfo(sides, marks) {
+        const obj = {};
+
+        for (let i = 0; i < sides.length; i++) {
+            obj[sides[i]] = marks[i];
+        }
+
+        console.log(obj);
+    }
+
+    getPerimeter() {
+        console.log("Base class perimeter")
+    }
+
+    getArea() {
+        console.log("Base class area")
     }
 }
 
-class Dog extends Animal {
-    constructor(name, breed) {
-        super(name);
-        this.breed = breed;
+class Square extends Figure{
+    getPerimeter(a) {
+        console.log(`Square perimeter: ${a*4}`)
     }
 
-    speak() {
-        console.log(`${this.name} гавкає!`);
-    }
-
-    executeCommand(command) {
-        console.log(`${this.name} executes command ${command}`);
+    getArea(a) {
+        console.log(`Square Area: ${Math.pow(a, 2)}`)
     }
 }
 
-class Cat extends Animal { }
+class Rectangle extends Figure{
+    getPerimeter(a, b) {
+        console.log(`Rectangle perimeter: ${(a+b)*2}`)
+    }
 
-const myPet = new Dog('Тигр', 'Вівчарка');
+    getArea(a,b) {
+        console.log(`Rectangle perimeter: ${a*b}`)
+    }
+}
 
-myPet.executeCommand('сидіти');
-myPet.eat();
-myPet.speak();
+class Triangle extends Figure{
+    getPerimeter(a, b, c) {
+        console.log(`Triangle perimeter: ${a+b+c}`)
+    }
 
-console.log(myPet instanceof Animal); // true
+    getArea(a, b, c) {
+        const p = (a + b + c) / 2;
+        console.log(
+            `Triangle area: ${Math.sqrt(p * (p - a) * (p - b) * (p - c))}`
+        );
+    }
+}
+
+// 3
+
+class ExtendedArray extends Array {
+    getString(separator = ",") {
+        return this.join(separator); // this = array
+    }
+
+    getHtml(tagName) {
+        let result = "";
+
+        for (let item of this) { // of(arrays) = till the end of this exact array
+            result += `<${tagName}>${item}</${tagName}>`;
+        }
+
+        if (tagName.toLowerCase() /* lower case */ === "li") {
+            result = `<ul>${result}</ul>`;
+        }
+
+        return result;
+    }
+}
+
+let fruits = new ExtendedArray(
+    "Яблуко",
+    "Груша",
+    "Апельсин",
+    "Банан"
+);
+
+console.log("getString(', '):");
+document.write(fruits.getString(", "));
+
+console.log("\ngetString(' - '):");
+document.write(fruits.getString(" - "));
+
+console.log("\ngetHtml('p'):");
+document.write(fruits.getHtml("p"));
+
+console.log("\ngetHtml('li'):");
+document.write(fruits.getHtml("li"));

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+     <style>
+        #text {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        #palette {
+            display: flex;
+            gap: 10px;
+        }
+
+        .color-cell {
+            width: 50px;
+            height: 50px;
+            border: 1px solid black;
+            cursor: pointer;
+        }
+
+        .red {
+            background-color: red;
+        }
+
+        .green {
+            background-color: green;
+        }
+
+        .blue {
+            background-color: blue;
+        }
+
+        .yellow {
+            background-color: yellow;
+        }
+
+        input {
+            width: 100px;
+            text-align: center;
+            font-size: 20px;
+        }
+
+        button {
+            font-size: 20px;
+            padding: 5px 15px;
+            margin: 5px;
+        }
+
+        #container {
+            border: 1px solid black;
+            border-radius: 10px;
+            padding: 0.6em;
+            display: flex;
+            flex-direction: row;
+            gap: 20px;
+        }
+
+        .new-element {
+            border: 2px solid black;
+            border-radius: 5px;
+            height: 50px;
+            width: 50px;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 20px auto;
+        }
+
+        #countryInput {
+            width: 300px;
+            padding: 8px;
+        }
+
+        #suggestions {
+            width: 318px;
+            border: 1px solid #ccc;
+            margin-top: 2px;
+        }
+
+        .suggestion {
+            padding: 8px;
+            cursor: pointer;
+        }
+
+        .suggestion:hover {
+            background-color: #f0f0f0;
+        }
+
+        .comment {
+            border: 1px solid gray;
+            border-radius: 5px;
+            padding: 10px;
+            margin-top: 10px;
+        }
+
+        .comment-header {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        form {
+            margin-top: 20px;
+        }
+
+        input, textarea {
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 5px;
+        }
+
+        textarea {
+            resize: vertical;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 1 -->
+    <button id="minus">-</button>
+
+    <input type="text" id="number" value="0" readonly>
+
+    <button id="plus">+</button>
+
+    <!-- 2 -->
+
+    <button onclick="addBlock()">Add Element</button>
+
+    <div id="container"></div>
+
+    <!-- 3 -->
+
+    <p id="text">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. In, reiciendis, iusto dolorem, voluptates qui eius officia itaque magnam delectus quam dicta? Quod illo itaque dolorum iste neque aut nisi culpa.
+    </p>
+
+    <div id="palette">
+        <div class="color-cell red" data-color="red"></div>
+        <div class="color-cell green" data-color="green"></div>
+        <div class="color-cell blue" data-color="blue"></div>
+        <div class="color-cell yellow" data-color="yellow"></div>
+    </div>
+
+    <!-- 4 -->
+    <h1>My Newspaper</h1>
+
+    <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis sapiente eveniet amet dicta, quas dolores adipisci, corrupti aspernatur nostrum tenetur harum vitae vel perferendis quibusdam repellendus tempora facilis, modi asperiores.
+    </p>
+
+    <h2>Comments</h2>
+
+    <div id="comments">
+        <div class="comment">
+            <div class="comment-header">
+                Admin | 20.06.2026, 12:00
+            </div>
+            <div>
+                Welcome to our website!
+            </div>
+        </div>
+    </div>
+
+    <h2>Add comment</h2>
+
+    <form id="commentForm">
+        <input
+            type="text"
+            id="username"
+            placeholder="Your name"
+            required
+        >
+
+        <textarea
+            id="commentText"
+            rows="4"
+            placeholder="Your comment"
+            required
+        ></textarea>
+
+        <button type="submit">
+            Add comment
+        </button>
+    </form>
+
+    <!-- 5 -->
+
+    <h2>Введіть країну</h2>
+
+    <input
+        type="text"
+        id="countryInput"
+        placeholder="Почніть вводити назву країни..."
+    >
+
+    <div id="suggestions"></div>
+
+    <script src="script5.js"></script>
+
+</body>
+</html>

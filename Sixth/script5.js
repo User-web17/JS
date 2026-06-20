@@ -105,11 +105,10 @@ CountryInput.addEventListener("input", () => {
         return;
     }
 
-    const matches = countries
-        .filter(country =>
+    const matches = countries.filter(country =>
             country.toLowerCase().startsWith(value)
         )
-        .slice(0, 10);
+    .slice(0, 10);
 
     matches.forEach(country => {
         const div = document.createElement("div");

@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .menu {
+            display: flex;
+            background: #5b7fa8;
+        }
+
+        .menu-item {
+            position: relative;
+        }
+
+        .menu-item > a {
+            display: block;
+            padding: 25px 40px;
+            color: white;
+            text-decoration: none;
+            font-size: 20px;
+        }
+
+        .menu-item > a:hover {
+            background: #4d7098;
+        }
+        .submenu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: #6488b0;
+            min-width: 190px;
+        }
+
+        .submenu a {
+            display: block;
+            padding: 20px 40px;
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        .submenu a:hover {
+            background: #5279a6;
+        }
+
+
+        .show {
+            display: block;
+        }
+        
+        body {
+            background-color: antiquewhite;
+            font-family: Arial, sans-serif; 
+            margin: 20px;
+        }
+
+        article {
+            border: 1px solid #ccc;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+        }
+
+        #upBtn {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+
+            padding: 15px 20px;
+            font-size: 18px;
+
+            background-color: #4CAF50;
+            color: white;
+
+            border: none;
+            border-radius: 10px;
+
+            cursor: pointer;
+        }
+
+        #upBtn:hover {
+            background-color: #45a049;
+        }
+
+       table {
+            border-collapse: collapse;
+            margin: 20px;
+            font-family: Arial, sans-serif;
+            font-size: 18px;
+        }
+
+        table th,
+        table td {
+            border: 2px solid #999;
+            padding: 20px 40px;
+            text-align: left;
+        }
+
+        table th {
+            font-weight: bold;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: row;
+            gap: 20px;
+            margin-left: 20px;
+            width: 300px;
+            height: 160px;
+        }
+
+        #label {
+            background-color: rgb(7, 88, 210);
+            border-radius: 10px;
+            color: white;
+            padding: 10px;
+            height: 40px;
+        }
+
+        #clickBtn {
+            background-color: rgb(7, 88, 210);
+            border-radius: 10px;
+            color: white;
+            padding: 10px;
+            height: 40px;
+        }
+
+        .calculator {
+            width: 400px;
+            margin: 20px;
+            display: grid;
+            grid-template-columns: repeat(4, 100px);
+        }
+
+        #display {
+            grid-column: span 4;
+            height: 80px;
+            border: 1px solid gray;
+            font-size: 40px;
+            text-align: right;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .button {
+            height: 80px;
+            font-size: 36px;
+        }
+
+        .equal {
+            grid-column: span 2;
+        }
+    </style>
+</head>
+<body>
+    <nav class="menu">
+
+        <div class="menu-item">
+            <a href="#">Home</a>
+        </div>
+
+        <div class="menu-item">
+            <a href="#" id="categories">Categories</a>
+
+            <div class="submenu" id="submenu">
+                <a href="#">Dresses</a>
+                <a href="#">Shirts</a>
+                <a href="#">Jeans</a>
+                <a href="#">Shoes</a>
+            </div>
+        </div>
+
+        <div class="menu-item">
+            <a href="#">About</a>
+        </div>
+
+        <div class="menu-item">
+            <a href="#">Contact</a>
+        </div>
+
+    </nav>
+
+    <!-- 1 -->
+    <table id="table">
+        <tr>
+            <th>Firstname</th>
+            <th>Lastname</th>
+            <th>Company</th>
+        </tr>
+        <tr>
+            <td>Bill</td>
+            <td>Gates</td>
+            <td>Microsoft</td>
+        </tr>
+        <tr>
+            <td>Timothy</td>
+            <td>Cook</td>
+            <td>Apple</td>
+        </tr>
+        <tr>
+            <td>Larry</td>
+            <td>Page</td>
+            <td>Google</td>
+        </tr>
+        <tr>
+            <td>Mark</td>
+            <td>Zuckerberg</td>
+            <td>Facebook</td>
+        </tr>
+    </table>
+    
+    <div class="container">
+        <p id="txt">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque debitis repellendus amet quisquam quidem aliquid minus quibusdam. Quis tempore maxime nostrum distinctio ullam vitae, modi libero asperiores, natus minus sequi?</p>
+    </div>
+
+    <div class="container">
+        <label id="label">👍 Likes: 0</label>
+        <button id="clickBtn">Like</button>
+    </div>
+
+    <div class="calculator">
+        <div id="display">0</div>
+
+        <button class="button">7</button>
+        <button class="button">8</button>
+        <button class="button">9</button>
+        <button class="button">+</button>
+
+        <button class="button">4</button>
+        <button class="button">5</button>
+        <button class="button">6</button>
+        <button class="button">-</button>
+
+        <button class="button">1</button>
+        <button class="button">2</button>
+        <button class="button">3</button>
+        <button class="button">*</button>
+
+        <button class="button">0</button>
+        <button class="equal">=</button>
+        <button class="button">/</button>
+    </div>
+
+    <h1>Articles list</h1>
+
+    <article>
+        <h2>1</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+    </article>
+
+    <article>
+        <h2>2</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+    </article>
+
+    <article>
+        <h2>3</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+    </article>
+
+    <article>
+        <h2>4</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+    </article>
+
+    <article>
+        <h2>5</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+    </article>
+
+    <article>
+        <h2>6</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+    </article>
+
+    <article>
+        <h2>7</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+    </article>
+
+    <article>
+        <h2>8</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+    </article>
+
+    <button id="upBtn">Up</button>
+    
+    <script src="script6.js"></script>
+</body>
+</html>

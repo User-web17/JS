@@ -94,13 +94,11 @@ textarea:focus{
     box-shadow:0 0 12px rgba(179,136,235,.4);
 }
 
-/* Upload */
 
 #avatar{
     color:#5b4368;
 }
 
-/* Drop Zone */
 
 .drop-zone{
     margin-top:8px;
@@ -151,7 +149,6 @@ textarea:focus{
     }
 }
 
-/* Buttons */
 
 button{
     width:100%;
@@ -316,7 +313,6 @@ input[type="color"]{
     align-items:flex-start;
 }
 
-/* Список */
 
 #questionsList{
 

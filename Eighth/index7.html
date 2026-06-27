@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles7.css">
+</head>
+<body>
+
+    <!-- 1 -->
+    <form id="loginForm">
+        <h3>Login</h3>
+
+        <div>
+            <label for="username">Ім'я</label>
+            <input
+                type="text"
+                id="username"
+                placeholder="Введіть ім'я"
+                required
+            >
+        </div>
+
+        <div>
+            <label for="password">Пароль</label>
+            <input
+                type="password"
+                id="password"
+                placeholder="Введіть пароль"
+                required
+            >
+        </div>
+
+        <div class="remember">
+            <input
+                type="checkbox"
+                id="remember"
+            >
+
+            <label for="remember">
+                Запам'ятати мене
+            </label>
+        </div>
+
+        <button type="submit">
+            Увійти
+        </button>
+
+        <p id="result"></p>
+
+    </form>
+
+    <!-- 2 -->
+
+    <form id="registerForm">
+
+        <h3>Registration</h3>
+
+        <div>
+            <label for="email">Пошта</label>
+            <input
+                type="email"
+                id="email"
+                placeholder="Введіть пошту"
+                required
+            >
+        </div>
+
+        <div>
+            <label for="login">Логін</label>
+            <input
+                type="text"
+                id="login"
+                placeholder="Введіть логін"
+                required
+            >
+        </div>
+
+        <div>
+            <label for="password1">Пароль</label>
+            <input
+                type="password"
+                id="password1"
+                placeholder="Введіть пароль"
+                required
+            >
+        </div>
+
+        <div>
+            <label for="password2">Повторіть пароль</label>
+            <input
+                type="password"
+                id="password2"
+                placeholder="Повторіть пароль"
+                required
+            >
+        </div>
+
+        <button type="submit">
+            Зареєструватися
+        </button>
+
+        <p id="result1"></p>
+
+    </form>
+
+    <!-- 3 -->
+    <form id="userForm">
+
+        <h3>Інформація про користувача</h3>
+
+        <div>
+            <label for="name">Ім'я</label>
+            <input
+                type="text"
+                id="name"
+                placeholder="Введіть ім'я"
+                required
+            >
+        </div>
+
+        <div>
+            <label for="surname">Прізвище</label>
+            <input
+                type="text"
+                id="surname"
+                placeholder="Введіть прізвище"
+                required
+            >
+        </div>
+
+        <div>
+            <label for="age">Вік</label>
+            <input
+                type="number"
+                id="age"
+                min="1"
+                placeholder="Введіть вік"
+                required
+            >
+        </div>
+
+        <div>
+            <label for="email">Пошта</label>
+            <input
+                type="email"
+                id="email"
+                placeholder="Введіть пошту"
+                required
+            >
+        </div>
+
+        <div>
+            <label for="city">Місто</label>
+            <input
+                type="text"
+                id="city"
+                placeholder="Введіть місто"
+                required
+            >
+        </div>
+
+        <div>
+            <label for="about">Про себе</label>
+            <textarea
+                id="about"
+                placeholder="Коротко про себе"
+            ></textarea>
+        </div>
+
+        <button type="submit">
+            Показати інформацію
+        </button>
+
+    </form>
+
+    <div id="result2"></div>
+
+    <!-- 4 -->
+
+    <form id="colorForm">
+
+        <h3>Палітра кольорів</h3>
+
+        <div>
+            <label for="colorName">Назва кольору</label>
+            <input
+                type="text"
+                id="colorName"
+                placeholder="Наприклад: Фіолетовий"
+                required
+            >
+        </div>
+
+        <div>
+            <label for="colorPicker">Оберіть колір</label>
+            <input
+                type="color"
+                id="colorPicker"
+                value="#b388eb"
+            >
+        </div>
+
+        <button type="submit">
+            Додати колір
+        </button>
+
+    </form>
+    <div id="palette"></div>
+
+    <!-- 5 -->
+     <div class="container">
+
+        <div id="questionsList">
+        
+            <h3>Створений тест</h3>
+        
+        </div>
+    
+        <form id="testForm">
+        
+            <h3>Додати питання</h3>
+        
+            <div>
+                <label for="question">Питання</label>
+                <input
+                    type="text"
+                    id="question"
+                    required
+                    placeholder="Введіть питання"
+                >
+            </div>
+        
+            <div>
+                <label for="correct">Правильна відповідь</label>
+                <input
+                    type="text"
+                    id="correct"
+                    required
+                    placeholder="Правильна відповідь"
+                >
+            </div>
+        
+            <div>
+                <label for="wrong">Неправильна відповідь</label>
+                <input
+                    type="text"
+                    id="wrong"
+                    required
+                    placeholder="Неправильна відповідь"
+                >
+            </div>
+        
+            <button type="submit">
+                Додати питання
+            </button>
+        
+        </form>
+    
+    </div>
+    <script src="script7.js"></script>
+</body>
+</html>

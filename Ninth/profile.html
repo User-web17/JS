@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="container">
+
+        <form id="profileForm">
+
+            <button type="button" class="exit-btn" id="exitBtn">
+                Exit
+            </button>
+
+            <h2>User Profile</h2>
+
+            <div class="form-group">
+                <label for="firstName">First Name</label>
+
+                <input
+                    type="text"
+                    id="firstName"
+                    placeholder="Enter your first name"
+                >
+
+                <div class="error" id="firstNameError"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="lastName">Last Name</label>
+
+                <input
+                    type="text"
+                    id="lastName"
+                    placeholder="Enter your last name"
+                >
+
+                <div class="error" id="lastNameError"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="birthYear">Birth Year</label>
+
+                <input
+                    type="number"
+                    id="birthYear"
+                    placeholder="Enter your birth year"
+                >
+
+                <div class="error" id="birthYearError"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="gender">Gender</label>
+
+                <select id="gender">
+                    <option value="">Select gender</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                </select>
+
+                <div class="error" id="genderError"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+
+                <input
+                    type="text"
+                    id="phone"
+                    placeholder="Enter your phone number"
+                >
+
+                <div class="error" id="phoneError"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="skype">Skype</label>
+
+                <input
+                    type="text"
+                    id="skype"
+                    placeholder="Enter your Skype"
+                >
+
+                <div class="error" id="skypeError"></div>
+            </div>
+
+            <button type="submit">
+                Save
+            </button>
+
+        </form>
+
+    </div>
+
+    <script src="profile.js"></script>
+
+</body>
+</html>
